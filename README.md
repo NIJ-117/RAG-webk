@@ -23,7 +23,8 @@ A pre-loaded PDF file, "Indian Art and Culture," is embedded within the system, 
 **Documentation  Report**: [https://drive.google.com/file/d/1bGBQedKDPbO_Mr7GsessQH8Zx63Hq1Qn/view?usp=sharing](https://drive.google.com/file/d/1bGBQedKDPbO_Mr7GsessQH8Zx63Hq1Qn/view?usp=sharing)
  
 
-**Caution**: This project is currently under development. As such, the chatbot's output may occasionally be undesired. We apologize for any inconvenience. 
+## Caution 
+**This project is currently under development. As such, the chatbot's output may occasionally be undesired. We apologize for any inconvenience.**
 
 
 
