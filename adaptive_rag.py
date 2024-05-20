@@ -489,8 +489,8 @@ def adaptive_rag_func(query,retriever,llm):
         from pprint import pprint
 
         # Define the input
-        
-        max_iterations_nodes = 5  # Maximum number of iterations
+        #due to computation we are capping the no the iterations 
+        max_iterations_nodes = 15  # Maximum number of iterations
         node_count = 0  # Counter for iterations
         interation_count=0 
         if query:
