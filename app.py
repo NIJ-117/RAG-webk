@@ -50,11 +50,11 @@ rag_type = st.selectbox(
 
 # due to in development process every llm code is not customized for every rag type. So, here we my adjustment according to that on particular which option have to be given
 if rag_type == "C-RAG":
-    embedding_type = st.selectbox("Select the embedding type", ("Cohere",))
+    embedding_type = st.selectbox("Select the embedding type", ("OpenAI","Cohere"))
     llm_type = st.selectbox("Select the LLM type", ("OpenAI GPT-3.5",))
 
 elif rag_type in ("Self RAG","Adaptive RAG"):
-    embedding_type = st.selectbox("Select the embedding type", ("Cohere",))
+    embedding_type = st.selectbox("Select the embedding type", ("OpenAI","Cohere"))
     llm_type = st.selectbox("Select the LLM type", ("Llama-3-70b","OpenAI GPT-3.5",))
 
 elif rag_type in ("Recursive Decomposition RAG", "Iterative Decomposition RAG"):
