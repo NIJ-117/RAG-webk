@@ -15,7 +15,7 @@ A pre-loaded PDF file, "Indian Art and Culture," is embedded within the system, 
 **PDF Name**: Indian Art and Culture  
 
 **PDF Link**: [Indian Art and Culture](https://drive.google.com/file/d/1inDvijg906FjxU3oyDoThe5EPXY9BYEW/view?usp=sharing) 
-
+*** Documentation  Report *** : [https://drive.google.com/file/d/1-jNsu5NFowYIb8WnKf1Vfjjhw9g1Xn-5/view?usp=sharing](https://drive.google.com/file/d/1-jNsu5NFowYIb8WnKf1Vfjjhw9g1Xn-5/view?usp=sharing)
  
 
 **Caution**: This project is currently under development. As such, the chatbot's output may occasionally be undesired. We apologize for any inconvenience. 
