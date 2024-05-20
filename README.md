@@ -10,19 +10,23 @@ The RAG APP Chatbot is an application that implements the Retrieval-Augmented Ge
 
 A pre-loaded PDF file, "Indian Art and Culture," is embedded within the system, allowing users to select from different types of embeddings to enhance the chatbot's functionality. 
 
- 
+ **RAG Chatbot installation video** :
+[Watch the video on YouTube](https://www.youtube.com/watch?v=2xayNtgwxDI)
 
-**PDF Name**: Indian Art and Culture  
+**RAG Chatbot working video** : [Watch the vido on youtube](https://www.youtube.com/watch?v=G9e7TJHfL-4)
+
+**PDF Used as database for the RAG Chatbot** :  Indian Art and Culture  
 
 **PDF Link**: [Indian Art and Culture](https://drive.google.com/file/d/1inDvijg906FjxU3oyDoThe5EPXY9BYEW/view?usp=sharing) 
 
 
-*** Documentation  Report *** : [https://drive.google.com/file/d/1bGBQedKDPbO_Mr7GsessQH8Zx63Hq1Qn/view?usp=sharing](https://drive.google.com/file/d/1bGBQedKDPbO_Mr7GsessQH8Zx63Hq1Qn/view?usp=sharing)
+**Documentation  Report**: [https://drive.google.com/file/d/1bGBQedKDPbO_Mr7GsessQH8Zx63Hq1Qn/view?usp=sharing](https://drive.google.com/file/d/1bGBQedKDPbO_Mr7GsessQH8Zx63Hq1Qn/view?usp=sharing)
  
 
 **Caution**: This project is currently under development. As such, the chatbot's output may occasionally be undesired. We apologize for any inconvenience. 
 
- 
+
+
 
 ## Installation 
 
