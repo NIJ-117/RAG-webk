@@ -7,6 +7,7 @@ from langchain.load import dumps, loads
 #load environment variables from a .env file
 load_dotenv()
 
+transform_count = 0
 def adaptive_rag_func(query,retriever,llm):
         """
         Adaptive RAG function to handle different types of queries by routing them
@@ -228,7 +229,8 @@ def adaptive_rag_func(query,retriever,llm):
             generation: str
             documents: List[str]
 
-
+        
+        MAX_TRANSFORMS = 3
         # ## Graph Flow 
 
 
@@ -320,9 +322,31 @@ def adaptive_rag_func(query,retriever,llm):
 
             # Re-write question
             better_question = question_rewriter.invoke({"question": question})
+
+            global transform_count
+            transform_count +=1
+
             return {"documents": documents, "question": better_question}
 
+        def check_transform_limit(state):
+            global transform_count
+            """
+            Check if the transform query has been called three times.
 
+            Args:
+                state (dict): The current graph state.
+
+            Returns:
+                str: Next node to call ('retrieve' or 'web_search').
+            """
+            if transform_count < MAX_TRANSFORMS:
+                print(f"---TRANSFORM QUERY COUNT: {transform_count}--- CONTINUE TO RETRIEVE")
+                print(state["question"])
+                return "retrieve"
+            else:
+                print(f"---TRANSFORM QUERY COUNT: {transform_count}--- SWITCH TO WEB SEARCH")
+                return "web_search"
+            
         def web_search(state):
             """
             Web search based on the re-phrased question.
@@ -338,6 +362,9 @@ def adaptive_rag_func(query,retriever,llm):
             question = state["question"]
 
             # Web search
+            global transform_count
+            transform_count = 0
+            # print(transform_count)
             docs = web_search_tool.invoke({"query": question})
             web_results = "\n".join([d["content"] for d in docs])
             web_results = Document(page_content=web_results)
@@ -469,7 +496,14 @@ def adaptive_rag_func(query,retriever,llm):
                 "generate": "generate",
             },
         )
-        workflow.add_edge("transform_query", "retrieve")
+        workflow.add_conditional_edges(
+            "transform_query",
+            check_transform_limit,
+            {
+                "retrieve": "retrieve",
+                "web_search": "web_search",
+            },
+        )
         workflow.add_conditional_edges(
             "generate",
             grade_generation_v_documents_and_question,
@@ -489,7 +523,7 @@ def adaptive_rag_func(query,retriever,llm):
         from pprint import pprint
 
         # Define the input
-        #due to computation we are capping the no the iterations 
+        
         max_iterations_nodes = 15  # Maximum number of iterations
         node_count = 0  # Counter for iterations
         interation_count=0 
